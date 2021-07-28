@@ -1,5 +1,5 @@
 export default{
-   async login(context, payload){
+    async login(context, payload){
         const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAwuGUOsp7tzqPy0aCwuoSwd0yiGduiK84',
             {
                 method: "POST",
@@ -18,7 +18,6 @@ export default{
             const error = new Error (responseData.message  || 'Failed to authenticate. Check your login data');
             throw error;
         }
-        console.log(responseData);
 
 
     context.commit('setAuth', {
@@ -26,5 +25,15 @@ export default{
         userId:  responseData.localId,
         tokenExpiration : responseData.expiresIn,
     } )
-}
+    },
+    logout(context){
+        context.commit('setAuth',{
+            token: null,
+            userId: null,
+            tokenExpiration: null
+        })
+
+
+    }
+
 }

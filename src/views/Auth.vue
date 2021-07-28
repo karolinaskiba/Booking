@@ -53,6 +53,7 @@ export default {
           email: this.email,
           password: this.password,
         });
+        this.$router.replace("/");
       } catch (err) {
         this.error = err.message || "Failed authenticate, try later";
       }
