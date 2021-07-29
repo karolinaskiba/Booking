@@ -7,7 +7,16 @@ export default createStore({
     auth: authModule,
     hotels: hotelsModule
     },
-  state: {},
+  state() {
+    return{
+      hotelId: 'c3'
+    }
+  },
+  getters:{
+    hotelId(state){
+      return state.hotelId;
+    }
+  },
   mutations: {},
   actions: {},
 });

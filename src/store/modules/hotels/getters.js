@@ -5,4 +5,5 @@ export default{
     hasHotels(state){
         return state.hotels && state.hotels.length > 0;
     }
+    
 }

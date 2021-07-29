@@ -6,7 +6,7 @@
     </router-link>
     <ul>
       <li v-for="hotel in hotelsList" :key="hotel.id">
-        {{ hotel.firstName }}
+        {{ hotel.name }}
       </li>
     </ul>
     <p v-if="!hasHotels">Any data to display</p>
@@ -25,6 +25,15 @@ export default {
     hasHotels() {
       return this.$store.getters["hotels/hasHotels"];
     },
+  },
+
+  methods: {
+    loadHotels() {
+      this.$store.dispatch("hotels/loadHotels");
+    },
+  },
+  created() {
+    this.loadHotels();
   },
 };
 </script>
