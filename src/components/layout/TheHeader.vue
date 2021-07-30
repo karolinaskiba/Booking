@@ -4,8 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link v-if="!isLoggedIn" to="/auth">Auth</router-link> |
-      <router-link to="/hotel-list">Hotel List</router-link> |
-      <button @click="logout" v-if="isLoggedIn">Logout</button>
+      <router-link to="/hotels">Hotel List</router-link> |
+      <v-btn @click="logout" v-if="isLoggedIn">Logout</v-btn>
     </div>
   </header>
 </template>

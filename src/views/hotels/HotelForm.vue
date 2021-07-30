@@ -13,7 +13,7 @@
       <textarea rows="5" id="description" v-model.trim="description" />
     </div>
     <div class="form-control">
-      <button>Save</button>
+      <v-btn>Save</v-btn>
     </div>
   </form>
 </template>

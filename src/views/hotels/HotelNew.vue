@@ -13,7 +13,7 @@ export default {
   methods: {
     saveData(data) {
       this.$store.dispatch("hotels/addHotelAction", data);
-      this.$router.replace("/hotel-list");
+      this.$router.replace("/hotels");
     },
   },
 };

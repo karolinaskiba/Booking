@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Auth from "../views/Auth.vue";
 import HotelList from "../views/hotels/HotelList.vue";
 import HotelNew from "../views/hotels/HotelNew.vue";
+import HotelDetails from "../views/hotels/HotelDetails.vue";
 
 const routes = [
   {
@@ -16,7 +17,7 @@ const routes = [
     component: Auth,
   },
   {
-    path: "/hotel-list",
+    path: "/hotels",
     name: "HotelList",
     component: HotelList,
   },
@@ -33,6 +34,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: '/hotels/:id',
+    component: HotelDetails,
+    props: true,
+
   },
 ];
 

@@ -2,19 +2,25 @@
   <div>
     <h1>Hotels</h1>
     <router-link v-if="isLoggedIn" to="/hotel-new">
-      <button>Add</button>
+      <v-btn>Add</v-btn>
     </router-link>
     <ul>
-      <li v-for="hotel in hotelsList" :key="hotel.id">
-        {{ hotel.name }}
-      </li>
+      <hotel-item
+        v-for="hotel in hotelsList"
+        :key="hotel.id"
+        :name="hotel.name"
+        :id="hotel.id"
+      >
+      </hotel-item>
     </ul>
     <p v-if="!hasHotels">Any data to display</p>
   </div>
 </template>
 
 <script>
+import HotelItem from "./HotelListItem.vue";
 export default {
+  components: { HotelItem },
   computed: {
     isLoggedIn() {
       return this.$store.getters.isAuth;
